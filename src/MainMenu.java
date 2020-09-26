@@ -7,8 +7,16 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+/**
+ * A class which represents the main menu of an encounter tracker,
+ * @author Connor Henderson (chenderson1190@gmail.com)
+ */
 public class MainMenu extends Application {
 
+    /**
+     * Method which starts the main stage of this MainMenu,
+     * @param stage The stage which this will be shown on.
+     */
     public void start(Stage stage){
         Label welcomeLabel = new Label("Hello and Welcome to the encounter tracker\n version 0.0.1!");
         Button newEncounterButton = new Button("Create a new Encounter");
