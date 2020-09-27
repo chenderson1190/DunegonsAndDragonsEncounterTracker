@@ -30,7 +30,8 @@ public class MainMenu extends Application {
         mainPane.getChildren().add(firstColumn);
 
         newEncounterButton.setOnAction((event) -> {
-            //TODO: Make Encounter and EncounterWindow classes.
+            StartEncounterWindow startEncounterWindow = new StartEncounterWindow();
+            startEncounterWindow.start(stage);
             });
 
         stage.setScene(mainScene);
