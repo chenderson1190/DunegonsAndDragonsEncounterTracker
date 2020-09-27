@@ -8,13 +8,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import java.util.Map;
-import java.util.TreeMap;
 
 public class StartEncounterWindow extends Application {
 
     public void start(Stage stage){
-        Map<Float, String> initiativePair = new TreeMap<>();
         Encounter encounter = new Encounter();
         TextField characterName = new TextField("Character Name");
         TextField initiative = new TextField("Initiative");
@@ -40,6 +37,8 @@ public class StartEncounterWindow extends Application {
             SaveEncounter save = new SaveEncounter();
             save.saveEncounter(encounter);
             stage.close();
+            EncounterWindow encounterWindow = new EncounterWindow();
+            encounterWindow.start(stage);
         });
 
         textFields.getChildren().addAll(characterName, initiative);
