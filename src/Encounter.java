@@ -9,7 +9,7 @@ import java.util.*;
  * @author Connor Henderson (chenderson1190@gmail.com)
  */
 public class Encounter implements Serializable {
-    private TreeMap<Float, String> initiativeOrder;
+    private TreeMap<Integer, String> initiativeOrder;
 
     Encounter(){
         initiativeOrder = new TreeMap<>();
@@ -19,12 +19,12 @@ public class Encounter implements Serializable {
         return initiativeOrder.toString();
     }
 
-    void add(String name, Float initiative){
+    void add(String name, Integer initiative){
         initiativeOrder.put(initiative, name);
     }
 
-    public Map<Float, String> getInitiativeOrder(){
-        return initiativeOrder;
+    public Map<Integer, String> getInitiativeOrder(){
+        return initiativeOrder.descendingMap();
     }
     private void readObject(ObjectInputStream inputStream) throws ClassNotFoundException, IOException {
         //always perform the default de-serialization first

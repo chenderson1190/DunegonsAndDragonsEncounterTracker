@@ -28,7 +28,7 @@ public class StartEncounterWindow extends Application {
         });
 
         submitButton.setOnAction((event) -> {
-            float initiativeValue = Integer.parseInt(initiative.getText());
+            Integer initiativeValue = Integer.parseInt(initiative.getText());
             encounter.add(characterName.getText(), initiativeValue);
             System.out.println(encounter);
         });
