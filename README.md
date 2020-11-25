@@ -2,7 +2,7 @@
 An encounter tracker for Dungeons and Dragons fifth edition.
 
 # Running Instructions:
-> javac ui/*.java, actions/*.java
+> javac ui/\*.java, actions/\*.java
 > java ui.MainMenu
 
 # Notes:
