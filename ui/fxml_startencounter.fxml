@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane fx:controller="ui.StartEncounterWindow"
+    xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"
+    styleClass="root">
+
+    <Text text="NEW ENCOUNTER"
+        GridPane.rowIndex="0"/>
+
+    <TextField fx:id="name" text="Character Name"
+        GridPane.rowIndex="1"/>
+    
+    <TextField fx:id="initiative" text="Initiative"
+        GridPane.rowIndex="2"/>
+
+    <Button fx:id="submitButton" text="Submit"
+        onAction="#handleSubmitButton"
+        GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    
+    <Button fx:id="finishedButton" text="Finished"
+        onAction="#handleFinishedButton"
+        GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    
+    
+</GridPane>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane fx:controller="ui.MainMenuController"
+    xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"
+    styleClass="root">
+
+    <Text text="Welcome to the Dungeons and Dragons 5e Encounter Tracker! Verison 0.0.2"
+        GridPane.rowIndex="0"/>
+
+    <Button fx:id="newEncounterButton" text="Create a New Encounter"
+        onAction="#handleNewEncounterButton"
+        GridPane.rowIndex="1"/>
+    
+</GridPane>

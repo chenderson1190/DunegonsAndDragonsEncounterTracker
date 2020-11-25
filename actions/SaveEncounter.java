@@ -1,9 +1,11 @@
+package actions;
+
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 
-class SaveEncounter {
+public class SaveEncounter {
 
-    void saveEncounter(Encounter encounter){
+    public void saveEncounter(Encounter encounter){
         try {
             FileOutputStream saveFile = new FileOutputStream("EncounterSave.txt");
             ObjectOutputStream save = new ObjectOutputStream(saveFile);

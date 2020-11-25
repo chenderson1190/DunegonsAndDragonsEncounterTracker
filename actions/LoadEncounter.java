@@ -1,8 +1,10 @@
+package actions;
+
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
-class LoadEncounter {
-    Encounter loadEncounter(){
+public class LoadEncounter {
+    public Encounter loadEncounter(){
         try {
             FileInputStream saveFile = new FileInputStream("EncounterSave.txt");
             ObjectInputStream save = new ObjectInputStream(saveFile);

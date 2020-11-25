@@ -1,3 +1,5 @@
+package actions;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -11,7 +13,7 @@ import java.util.*;
 public class Encounter implements Serializable {
     private TreeMap<Integer, String> initiativeOrder;
 
-    Encounter(){
+    public Encounter(){
         initiativeOrder = new TreeMap<>();
     }
 
@@ -19,7 +21,7 @@ public class Encounter implements Serializable {
         return initiativeOrder.toString();
     }
 
-    void add(String name, Integer initiative){
+    public void add(String name, Integer initiative){
         initiativeOrder.put(initiative, name);
     }
 
