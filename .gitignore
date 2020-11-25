@@ -1,0 +1,6 @@
+# All .class (and .ser) files in main dir
+*.class
+*.ser
+# All .class files in subdirs
+actions/*.class
+ui/*.class

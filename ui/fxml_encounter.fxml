@@ -6,15 +6,17 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane fx:controller="ui.EncounterWindow"
+<GridPane fx:controller="ui.EncounterHandler"
     xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"
     styleClass="root">
-
-    <Text fx:id="turnTracker" text="Turn "/>
+    <VBox fx:id="characterContainer"
+        GridPane.rowIndex="2">
+    </VBox>
+    <Text fx:id="turnTracker" text="First Turn"/>
 
     <Button text="Next Turn"
+        onAction="#handleNextTurnButton" defaultButton="true"
         GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-        <!--onAction="#handleSubmitButton"-->
     
     <Button text="Add a Character to the Initiative Order"
         GridPane.rowIndex="3" GridPane.columnIndex="1"/>

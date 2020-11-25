@@ -22,10 +22,9 @@ public class StartEncounterWindow {
     @FXML private Button finishedButton; 
     @FXML private TextField name;
     @FXML private TextField initiative;
-    private Encounter encounter;
+    private Encounter encounter = new Encounter();;
 
     @FXML protected void handleSubmitButton(ActionEvent event){
-        encounter = new Encounter();
         String nameString = name.getText();
         int initiativeInt = Integer.parseInt(initiative.getText());
 
@@ -39,14 +38,13 @@ public class StartEncounterWindow {
         Stage stage = new Stage();
         Parent encounterWindow = FXMLLoader.load(getClass().getResource("fxml_encounter.fxml"));
         Scene scene = new Scene(encounterWindow);
-
+        
+        System.out.println("Saving encounter: " + encounter);
+        // TODO: Find out why saving doesn't work without this print statement.
+        SaveEncounter.saveEncounter(encounter);
         newEncounterStage.close();
         stage.setScene(scene);
         stage.show();
-    }
-
-    public Encounter getEncounter(){
-        return this.encounter;
     }
 
 }

@@ -5,9 +5,9 @@ import java.io.ObjectOutputStream;
 
 public class SaveEncounter {
 
-    public void saveEncounter(Encounter encounter){
+    public static void saveEncounter(Encounter encounter){
         try {
-            FileOutputStream saveFile = new FileOutputStream("EncounterSave.txt");
+            FileOutputStream saveFile = new FileOutputStream("EncounterSave.ser");
             ObjectOutputStream save = new ObjectOutputStream(saveFile);
             save.writeObject(encounter);
             save.close();
