@@ -16,5 +16,7 @@
     <Button fx:id="newEncounterButton" text="Create a New Encounter"
         onAction="#handleNewEncounterButton"
         GridPane.rowIndex="1"/>
-    
+    <Button text="Load the Last Encounter"
+        onAction="#handleLoadLastButton"
+        GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 </GridPane>

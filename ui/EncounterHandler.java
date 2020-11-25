@@ -21,32 +21,43 @@ import javafx.fxml.Initializable;
 import java.util.ResourceBundle;
 import java.net.URL;
 import javafx.scene.Node;
+import java.util.ArrayList;
 
 public class EncounterHandler {
+    //private VBox charSubContainer;
+    //private HBox actionContainer;
+    private ArrayList<Button> buttons = new ArrayList<Button>();
     private int turnCounter = 1;
-    Encounter encounter = LoadEncounter.loadEncounter();
+    private Stage addCharStage = new Stage();
+    private Encounter encounter;
     @FXML private Text turnTracker;
     @FXML private VBox characterContainer;
+    
 
     @FXML protected void handleNextTurnButton(ActionEvent event){
         turnCounter++;
         turnTracker.setText("Turn " + turnCounter);
-        // TODO: Finish implementing un-greying out the buttons when next turn
-        // is pressed.
-        for(Node o : characterContainer.getChildren()){
-            System.out.println("Child of charcontainer: " + o);
-            // for(Node p : o.getChildren()){
-            //     System.out.println("Child of child of charcontainer: " + p);
-
-            // }
+        for(Button b : buttons){
+            b.setDisable(false);
         }
+    }
+
+    @FXML protected void handleAddToInitButtton(ActionEvent event) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("fxml_addcharactermenu.fxml"));
+
+        addCharStage.setTitle("5e Encounter Tracker");
+        addCharStage.setScene(new Scene(root));
+        addCharStage.showAndWait();
+        initialize();
     }
     
     public void initialize(){
-        System.out.println("Loaded Encounter: " + encounter);
+        encounter = LoadEncounter.loadEncounter();
+        characterContainer.getChildren().clear();
         Collection<String> nameList = encounter.getInitiativeOrder().values();
         for(String i : nameList) {
             VBox charSubContainer = new VBox(10);
+            //charSubContainer = new VBox(10);
             Label actionLabel = new Label(i + "'s actions:");
             HBox actionContainer = new HBox(10);
             Button attackButton = new Button("Attack");
@@ -67,6 +78,10 @@ public class EncounterHandler {
                 bonusButton.setDisable(true);
             });
 
+            buttons.add(attackButton);
+            buttons.add(reactionButton);
+            buttons.add(moveButton);
+            buttons.add(bonusButton);
             actionContainer.getChildren().addAll(attackButton, reactionButton, moveButton, bonusButton);
             charSubContainer.getChildren().addAll(actionLabel, actionContainer);
             characterContainer.getChildren().add(charSubContainer);

@@ -19,8 +19,8 @@
         GridPane.rowIndex="3" GridPane.columnIndex="0"/>
     
     <Button text="Add a Character to the Initiative Order"
+        onAction="#handleAddToInitButtton"
         GridPane.rowIndex="3" GridPane.columnIndex="1"/>
-        <!--onAction="#handleFinishedButton"-->
     
     
 </GridPane>

@@ -13,12 +13,24 @@ public class MainMenuController {
 
     @FXML protected void handleNewEncounterButton(ActionEvent event) throws Exception{
         Stage menuStage = (Stage) newEncounterButton.getScene().getWindow();
-        menuStage.close();
         Stage stage = new Stage();
         Parent startWindow = FXMLLoader.load(getClass().getResource("fxml_startencounter.fxml"));
         Scene scene = new Scene(startWindow);
+
+        menuStage.close();
         stage.setScene(scene);
         stage.show();
 
+    }
+
+    @FXML protected void handleLoadLastButton(ActionEvent event) throws Exception{
+        Stage menuStage = (Stage) newEncounterButton.getScene().getWindow();
+        Stage stage = new Stage();
+        Parent startWindow = FXMLLoader.load(getClass().getResource("fxml_encounter.fxml"));
+        Scene scene = new Scene(startWindow);
+
+        menuStage.close();
+        stage.setScene(scene);
+        stage.show();
     }
 }
